@@ -1,0 +1,15 @@
+{
+  "name": "easelian-rdh",
+  "description": "Easelian Remote Device Hub plugin for Claude.",
+  "owner": {
+    "name": "Easelian",
+    "email": "easeliannet@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "remote-device-hub",
+      "source": "./plugins/remote-device-hub",
+      "description": "Use authorized remote devices through Remote Device Hub: files, processes, and managed browser sessions."
+    }
+  ]
+}

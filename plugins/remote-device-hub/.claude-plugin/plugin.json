@@ -1,0 +1,14 @@
+{
+  "name": "remote-device-hub",
+  "version": "0.1.2",
+  "description": "Use your authorized remote devices for file, process, and managed browser tasks through Easelian Remote Device Hub.",
+  "author": {
+    "name": "Easelian",
+    "email": "easeliannet@gmail.com",
+    "url": "https://easelian.com/"
+  },
+  "homepage": "https://rdh.easelian.com",
+  "privacyPolicyUrl": "https://easelian.com/privacy",
+  "license": "Apache-2.0",
+  "keywords": ["mcp", "remote-device", "files", "processes", "browser"]
+}

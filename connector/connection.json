@@ -1,0 +1,22 @@
+{
+  "name": "Remote Device Hub",
+  "publisher": "Easelian",
+  "transport": "http",
+  "mcp_url": "https://rdh.easelian.com/mcp",
+  "resource_metadata_url": "https://rdh.easelian.com/.well-known/oauth-protected-resource/mcp",
+  "oauth": {
+    "required": true,
+    "method": "oauth_dcr",
+    "issuer": "https://auth.easelian.com/",
+    "authorization_server_metadata_url": "https://auth.easelian.com/.well-known/oauth-authorization-server",
+    "scope": "devices:control",
+    "pkce": "S256",
+    "hosted_callback": "https://claude.ai/api/mcp/auth_callback"
+  },
+  "website_url": "https://rdh.easelian.com/",
+  "publisher_url": "https://easelian.com/",
+  "privacy_url": "https://easelian.com/privacy",
+  "terms_url": "https://easelian.com/terms",
+  "support_url": "https://easelian.com/contact",
+  "support_email": "easeliannet@gmail.com"
+}

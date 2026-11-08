@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "remote-device-hub": {
+      "type": "http",
+      "url": "https://rdh.easelian.com/mcp"
+    }
+  }
+}

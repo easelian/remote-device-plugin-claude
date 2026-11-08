@@ -1,0 +1,5 @@
+dist/
+.build/
+docs/submission/
+__pycache__/
+*.pyc
