@@ -1,7 +1,5 @@
 # Remote Device Hub
 
-![Remote Device Hub icon](assets/icon.png)
-
 Use Claude with your authorized Linux, macOS, and Windows devices through
 Easelian Remote Device Hub (RDH). This plugin connects to RDH and provides a
 skill for reading and editing files, running managed processes, inspecting
