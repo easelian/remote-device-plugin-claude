@@ -1,7 +1,7 @@
 # Remote Device Hub for Claude
 
 Connect Claude to your authorized Linux, macOS, and Windows devices through
-Easelian Remote Device Hub (RDH). Use file tools, managed processes, and browser
+Remote Device Hub (RDH) by Easelian. Use file tools, managed processes, and browser
 operations according to your account access and each device's permissions.
 
 This repository provides two ways to use the same service:
@@ -15,6 +15,8 @@ Both use `https://rdh.easelian.com/mcp`, so an account that has the Connector
 and the plugin sees one set of tools. The plugin adds the operating skill; the
 Connector alone supplies only the tools. The installable plugin is in
 `plugins/remote-device-hub/`. The server implementation is maintained separately.
+
+See [RDH terminology and service responsibilities](docs/terminology.md) for the shared product, Agent, authorization and execution concepts.
 
 ## Before connecting
 
