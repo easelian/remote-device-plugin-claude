@@ -8,10 +8,12 @@ This repository provides two ways to use the same service:
 
 | Integration | Contents | Setup |
 | --- | --- | --- |
-| [Plugin](plugins/remote-device-hub/README.md) | MCP connection configuration and an operating skill | Install in a Claude app that supports these components; Claude Code instructions are below |
+| [Plugin](plugins/remote-device-hub/README.md) | MCP connection configuration and an operating skill | Install in Claude Code, or upload to claude.ai or Cowork; instructions are below |
 | [Connector](connector/README.md) | Connection, authentication, and tool documentation | Add the MCP URL in Claude's connector settings and authorize access |
 
-Both use `https://rdh.easelian.com/mcp`. The installable plugin is in
+Both use `https://rdh.easelian.com/mcp`, so an account that has the Connector
+and the plugin sees one set of tools. The plugin adds the operating skill; the
+Connector alone supplies only the tools. The installable plugin is in
 `plugins/remote-device-hub/`. The server implementation is maintained separately.
 
 ## Before connecting
@@ -28,6 +30,8 @@ and other human steps on the pages returned by RDH.
 
 ## Install the plugin
 
+### Claude Code
+
 Use a Claude Code installation that supports plugins and HTTP MCP. Obtain this
 repository or extract its source archive, then run from the repository root:
 
@@ -35,6 +39,9 @@ repository or extract its source archive, then run from the repository root:
 claude plugin marketplace add .
 claude plugin install remote-device-hub@easelian-rdh --scope user
 ```
+
+With access to the GitHub repository, add the marketplace as
+`easelian/remote-device-plugin-claude` in place of the local path.
 
 Restart Claude Code, confirm the plugin is enabled in `/plugin`, then select its
 Remote Device Hub entry in `/mcp` and complete OAuth sign-in.
@@ -57,6 +64,15 @@ Start with this request:
 
 An empty device list is a valid result. After selecting a device, ask for its
 roots, permissions, and capabilities through `device_info` before starting a task.
+
+### claude.ai and Cowork
+
+Build the plugin archive as described under [Validate and package](#validate-and-package),
+or obtain `remote-device-hub-plugin-<version>.zip` from a release. In Claude, open
+**Customize > Plugins > Add > Upload plugin** and select that archive. Then open
+the plugin's **Connectors** tab, connect Remote Device Hub, and complete OAuth
+sign-in. On Team and Enterprise plans an Owner adds the connector for the
+organization before members connect their own accounts.
 
 ## Connect without the plugin
 
@@ -93,10 +109,13 @@ claude plugin validate .
 python3 scripts/package.py
 ```
 
-The package command creates a versioned ZIP and SHA-256 file in `dist/`. The
-archive contains the plugin, Connector documentation, and build scripts. Extract
-it and follow the installation steps above. These checks validate the source and
-package; OAuth and device operations require a live account and device.
+The package command creates two versioned ZIP files in `dist/`, each with a
+SHA-256 file. `remote-device-hub-claude-<version>.zip` is the source archive: the
+plugin, Connector documentation, and build scripts. Extract it and follow the
+Claude Code steps above. `remote-device-hub-plugin-<version>.zip` holds only the
+plugin folder, the layout that the claude.ai and Cowork upload accepts. These
+checks validate the source and packages; OAuth and device operations require a
+live account and device.
 
 Repository text is maintained in English. Keep working notes, review preparation,
 credentials, and validation output outside version control. Packaging uses an

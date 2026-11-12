@@ -26,9 +26,10 @@ Remote Device Hub entry in `/mcp` and complete OAuth sign-in. For a single-sessi
 trial, run `claude --plugin-dir ./plugins/remote-device-hub` from the repository
 root instead. The local marketplace and single-session methods are alternatives.
 
-In another supported Claude app, use its plugin and connector settings. Component
-support varies by app; successful installation does not establish that OAuth or
-device operations work there.
+On claude.ai and in Cowork, upload the plugin archive under **Customize > Plugins >
+Add > Upload plugin**, then connect Remote Device Hub from the plugin's
+**Connectors** tab and complete OAuth sign-in. Successful installation does not
+establish that OAuth or device operations work there.
 
 The MCP URL is `https://rdh.easelian.com/mcp`. If RDH is also configured separately
 as a Connector, check which connection and account you are using before operating
