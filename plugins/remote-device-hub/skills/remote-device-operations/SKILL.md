@@ -13,8 +13,9 @@ MCP server with similarly named tools.
 
 ## Connect and select a device
 
-1. If the connection needs authentication, direct the user to Remote Device Hub
-   in the host's connector settings, or `/mcp` in Claude Code, for OAuth sign-in.
+1. If the connection needs authentication, use the host's MCP server controls
+   or connector settings for Remote Device Hub (`/mcp` in Claude Code or Copilot).
+   Complete OAuth sign-in for the connection selected in the current session.
    The host manages credentials. Never request passwords, tokens, or pairing secrets in chat,
    read local credential stores, or invent an Authorization header.
 2. Call `list_devices`. An empty list is a valid authenticated result. Refer
