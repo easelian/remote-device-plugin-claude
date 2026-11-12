@@ -4,7 +4,8 @@ Connect Claude to devices you own or are authorized to administer through
 Easelian Remote Device Hub (RDH). The remote MCP service supplies device discovery,
 file operations, managed processes, and browser tools. The companion
 [Plugin](../plugins/remote-device-hub/README.md) adds operating instructions for
-the same service.
+the same service. Its MCP configuration uses the same URL as this Connector, so
+an account that has both sees one set of tools.
 
 ## Before connecting
 
