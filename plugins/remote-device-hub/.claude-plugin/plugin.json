@@ -2,7 +2,7 @@
   "name": "remote-device-hub",
   "displayName": "Remote Device Hub",
   "version": "0.1.3",
-  "description": "Use your authorized remote devices for file, process, and managed browser tasks through Easelian Remote Device Hub.",
+  "description": "Remote Device Hub (RDH) lets Claude work securely on your private machines: read logs, edit files, run commands. Encrypted, no SSH, no open ports, any network.",
   "author": {
     "name": "Easelian",
     "email": "easeliannet@gmail.com",

@@ -9,7 +9,7 @@
     {
       "name": "remote-device-hub",
       "source": "./plugins/remote-device-hub",
-      "description": "Use authorized remote devices through Remote Device Hub: files, processes, and managed browser sessions."
+      "description": "Remote Device Hub (RDH) lets Claude work securely on your private machines: read logs, edit files, run commands. Encrypted, no SSH, no open ports, any network."
     }
   ]
 }
