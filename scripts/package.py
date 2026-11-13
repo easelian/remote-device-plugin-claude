@@ -22,6 +22,7 @@ FILES = [
     Path("connector/connection.json"),
     Path("connector/tools.md"),
     Path("docs/data-handling.md"),
+    Path("docs/terminology.md"),
     PLUGIN / ".claude-plugin/plugin.json",
     PLUGIN / ".mcp.json",
     PLUGIN / "LICENSE",
