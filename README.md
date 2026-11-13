@@ -16,7 +16,7 @@ and the plugin sees one set of tools. The plugin adds the operating skill; the
 Connector alone supplies only the tools. The installable plugin is in
 `plugins/remote-device-hub/`. The server implementation is maintained separately.
 
-See [RDH terminology and service responsibilities](docs/terminology.md) for the shared product, Agent, authorization and execution concepts.
+See [RDH terminology](docs/terminology.md) for the shared product, Agent, authorization and execution concepts.
 
 ## Before connecting
 
