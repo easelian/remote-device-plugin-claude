@@ -34,6 +34,6 @@ For retention details or account-data deletion, consult the published
 [Privacy Notice](https://easelian.com/privacy) or contact
 [Easelian support](https://easelian.com/contact).
 
-Closing a browser session, deleting a named profile, deleting a browser artifact,
-and deleting an account are distinct operations. Closing a session does not
-remove every retained record.
+Closing a browser session, deleting a browser download on the files page, and
+deleting an account have separate effects. Closing a session does not remove
+every retained record.

@@ -19,9 +19,9 @@ account authorization or device permissions.
 | Search files | `search_files`, `start_search`, `get_search_results`, `list_searches`, `stop_search` | Literal search or managed asynchronous search; preserve task IDs and offsets |
 | Change files | `write_file`, `edit_file`, `make_directory`, `move_file` | Write permission, create-only checks, current whole-file hashes for edits, destination checks for moves |
 | Run processes | `start_process`, `read_process`, `list_processes`, `write_process_stdin`, `terminate_process` | Shell permission; explicit job IDs; verify output and terminal status |
-| Inspect browser state | `browser_sessions`, `browser_tabs`, `browser_observe`, `browser_screenshot`, `browser_wait`, `browser_files`, `browser_profiles` | Browser capability, bounded observations, screenshots, artifact and profile metadata |
-| Operate a browser | `browser_open`, `browser_act`, `browser_control` | Session creation, input, human-control handoff, close, and authorized cleanup; fresh observation references and session epochs |
-| Recover an operation | `prepare_operation`, `get_operation_status`, `list_operations`, `get_call_status`, `list_calls` | Reserve a supported operation ID before a change; inspect state after uncertainty without repeating it |
+| Inspect browser state | `browser_read`, `browser_see`, `browser_files` | Sessions, tabs, page text, diagnostics, screenshots, downloads and upload approvals |
+| Operate a browser | `browser_do` | Run ordered steps to open a page, interact, hand control to a person, or close the session |
+| Recover an operation | `prepare_operation`, `get_operation_status`, `list_operations`, `get_call_status`, `list_calls` | Reserve an ID when needed before dispatch. The Server automatically reserves one for `browser_do` |
 | Check account allowance | `get_billing_status` | Read entitlement and quota information; no checkout or payment operation |
 
 ## File and process boundaries
@@ -41,21 +41,16 @@ does not include a general delete-file tool.
 ## Browser boundaries
 
 Browser operations require account access and an enabled, usable Agent browser.
-`browser_open` normally creates an isolated temporary profile, separate from the
-user's daily browser. A named persistent profile is opt-in and retains state;
-closing its session does not delete the profile.
+An `open` step in `browser_do` starts an isolated temporary browser session when
+needed. Name controls by their label and read the page when you need more
+context. Screenshots can include sensitive page data. For login or another
+human-only step, pause with `browser_do` and give the user the authenticated RDH
+link returned by the tool. Wait for handback before resuming.
 
-Observe the page before acting and use the current references and session epoch.
-Screenshots contain the current viewport and can include sensitive page data.
-For login or another human step, use the returned authenticated `human_url`.
-Passwords must not be sent through AI tool input. Human control pauses AI input
-until the user hands the session back.
-
-Uploads require the user's approval on the returned files page and a one-use
-grant for the selected site. Selecting a file can itself disclose it to that
-site. Downloads use the authenticated `files_url`; the model must not invent
-download links. Browser cleanup actions can delete retained data and require
-authorization for the specific session, profile, or artifact.
+Use the authenticated `files_url` returned by `browser_files` for downloads and
+upload approvals. An upload step needs the user's one-use grant for that site.
+Selecting a file can disclose it to the site. The user can delete or cancel
+downloads on the files page.
 
 ## Uncertain results
 

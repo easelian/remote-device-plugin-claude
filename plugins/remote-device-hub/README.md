@@ -59,8 +59,8 @@ Requests and results pass through RDH to the selected Agent. Results supplied to
 Claude can include device information, file contents, process output, webpage
 text, or screenshots. Browser uploads require explicit human approval. Enter
 passwords and complete human-only steps on the returned RDH page, not in chat.
-Named browser profiles retain browser state until separately removed; closing a
-session does not delete a named profile.
+Browser sessions use temporary profiles. Manage downloads and upload approvals
+on the authenticated files page.
 
 ## Privacy Policy and support
 
