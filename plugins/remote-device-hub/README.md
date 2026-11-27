@@ -6,8 +6,12 @@ skill for reading and editing files, running managed processes, inspecting
 webpages, and recovering from uncertain operation results.
 
 An RDH account and an enrolled, approved Agent are required. Each device's
-permissions determine the available operations. Browser tasks also require
-browser access to be enabled for the account and Agent.
+permissions determine the available operations.
+
+Browser tools are off by default: RDH lists them only after the account
+owner turns on **Allow AI to use the browser** in RDH account settings, and the
+device's own browser policy still applies. Turning the setting off removes them
+again.
 
 ## Install and connect
 
@@ -42,7 +46,8 @@ or describe your task naturally:
 - On my selected device, show its file roots and read the README I specify.
 - Create a new test file in the selected root, then read it back to verify it.
 - Run an approved diagnostic command and report its output and exit status.
-- Open a specified webpage on a browser-enabled device and inspect the page.
+- After you turn on AI browser access, open a specified webpage on the selected
+  device and inspect the page.
 
 The skill starts with `list_devices` and `device_info`. It uses current file
 hashes before editing, tracks process and browser session IDs, and checks receipts

@@ -19,8 +19,8 @@ account authorization or device permissions.
 | Search files | `search_files`, `start_search`, `get_search_results`, `list_searches`, `stop_search` | Literal search or managed asynchronous search; preserve task IDs and offsets |
 | Change files | `write_file`, `edit_file`, `make_directory`, `move_file` | Write permission, create-only checks, current whole-file hashes for edits, destination checks for moves |
 | Run processes | `start_process`, `read_process`, `list_processes`, `write_process_stdin`, `terminate_process` | Shell permission; explicit job IDs; verify output and terminal status |
-| Inspect browser state | `browser_read`, `browser_see`, `browser_files` | Sessions, tabs, page text, diagnostics, screenshots, downloads and upload approvals |
-| Operate a browser | `browser_do` | Run ordered steps to open a page, interact, hand control to a person, or close the session |
+| Inspect browser state (off by default) | `browser_read`, `browser_see`, `browser_files` | Sessions, tabs, page text, diagnostics, screenshots, downloads and upload approvals |
+| Operate a browser (off by default) | `browser_do` | Run ordered steps to open a page, interact, hand control to a person, or close the session |
 | Recover an operation | `prepare_operation`, `get_operation_status`, `list_operations`, `get_call_status`, `list_calls` | Reserve an ID when needed before dispatch. The Server automatically reserves one for `browser_do` |
 | Check account allowance | `get_billing_status` | Read entitlement and quota information; no checkout or payment operation |
 
@@ -40,7 +40,10 @@ does not include a general delete-file tool.
 
 ## Browser boundaries
 
-Browser operations require account access and an enabled, usable Agent browser.
+Browser tools are off by default and are not listed until the account owner
+turns on **Allow AI to use the browser** in RDH account settings. Turning it off
+removes them again; reconnect or refresh the tool list after a change. Browser
+operations also require an enabled, usable Agent browser.
 An `open` step in `browser_do` starts an isolated temporary browser session when
 needed. Name controls by their label and read the page when you need more
 context. Screenshots can include sensitive page data. For login or another

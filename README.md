@@ -23,8 +23,12 @@ See [RDH terminology](docs/terminology.md) for the shared product, Agent, author
 Sign in at [RDH](https://rdh.easelian.com/), follow its Agent installation
 instructions, and approve device pairing under the same account. File tools use
 configured roots and permissions. Commands run with the Agent OS account's
-permissions; file roots do not confine shell commands. Browser operations also
-require browser access to be enabled for the account and Agent.
+permissions; file roots do not confine shell commands.
+
+Browser tools are off by default: RDH lists them only after the account
+owner turns on **Allow AI to use the browser** in RDH account settings, and the
+device's own browser policy still applies. Turning the setting off removes them
+again.
 
 Claude manages OAuth sign-in and credential storage. Only connect devices you
 own or are authorized to administer. Complete password entry, upload approval,

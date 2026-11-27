@@ -2,7 +2,8 @@
 
 Connect Claude to devices you own or are authorized to administer through
 Easelian Remote Device Hub (RDH). The remote MCP service supplies device discovery,
-file operations, managed processes, and browser tools. The companion
+file operations, managed processes, and, when the account owner turns them on,
+browser tools. The companion
 [Plugin](../plugins/remote-device-hub/README.md) adds operating instructions for
 the same service. Its MCP configuration uses the same URL as this Connector, so
 an account that has both sees one set of tools.
@@ -13,7 +14,10 @@ Sign in at [RDH](https://rdh.easelian.com/), install the Agent using the service
 installation instructions, and approve pairing under the same account. RDH
 supports Linux, macOS, and Windows Agents. Individual features depend on the
 Agent version, host environment, account access, and configured permissions.
-Browser operations require browser access to be enabled explicitly.
+Browser tools are off by default: RDH lists them only after the account
+owner turns on **Allow AI to use the browser** in RDH account settings, and the
+device's own browser policy still applies. Turning the setting off removes them
+again.
 
 Claude must allow remote connectors for your account and organization. Keep a
 small, non-sensitive sample file on an authorized device for the first read.
